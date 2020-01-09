@@ -11152,6 +11152,22 @@ var $mdgriffith$elm_ui$Internal$Model$Width = function (a) {
 	return {$: 'Width', a: a};
 };
 var $mdgriffith$elm_ui$Element$width = $mdgriffith$elm_ui$Internal$Model$Width;
+var $mdgriffith$elm_ui$Internal$Model$BorderWidth = F5(
+	function (a, b, c, d, e) {
+		return {$: 'BorderWidth', a: a, b: b, c: c, d: d, e: e};
+	});
+var $mdgriffith$elm_ui$Element$Border$width = function (v) {
+	return A2(
+		$mdgriffith$elm_ui$Internal$Model$StyleClass,
+		$mdgriffith$elm_ui$Internal$Flag$borderWidth,
+		A5(
+			$mdgriffith$elm_ui$Internal$Model$BorderWidth,
+			'b-' + $elm$core$String$fromInt(v),
+			v,
+			v,
+			v,
+			v));
+};
 var $author$project$View$attr = _List_fromArray(
 	[
 		$mdgriffith$elm_ui$Element$height(
@@ -11159,10 +11175,11 @@ var $author$project$View$attr = _List_fromArray(
 		$mdgriffith$elm_ui$Element$width(
 		$mdgriffith$elm_ui$Element$px(100)),
 		$mdgriffith$elm_ui$Element$Background$color(
-		A3($mdgriffith$elm_ui$Element$rgb, 2.0, 2.0, 0.0)),
+		A3($mdgriffith$elm_ui$Element$rgb, 211, 211, 211)),
 		$mdgriffith$elm_ui$Element$Border$rounded(5),
+		$mdgriffith$elm_ui$Element$Border$width(1),
 		$mdgriffith$elm_ui$Element$Border$color(
-		A3($mdgriffith$elm_ui$Element$rgb, 1.0, 1.0, 1.0)),
+		A3($mdgriffith$elm_ui$Element$rgb, 0, 0, 0)),
 		$mdgriffith$elm_ui$Element$padding(10),
 		$mdgriffith$elm_ui$Element$spacing(50)
 	]);
@@ -11399,6 +11416,15 @@ var $mdgriffith$elm_ui$Element$image = F2(
 						$mdgriffith$elm_ui$Internal$Model$Unkeyed(_List_Nil))
 					])));
 	});
+var $author$project$View$imgAttr = _List_fromArray(
+	[
+		$mdgriffith$elm_ui$Element$centerX,
+		$mdgriffith$elm_ui$Element$height(
+		$mdgriffith$elm_ui$Element$px(500)),
+		$mdgriffith$elm_ui$Element$Border$color(
+		A3($mdgriffith$elm_ui$Element$rgb, 0, 0, 0)),
+		$mdgriffith$elm_ui$Element$Border$width(2)
+	]);
 var $mdgriffith$elm_ui$Internal$Model$AsRow = {$: 'AsRow'};
 var $mdgriffith$elm_ui$Internal$Model$asRow = $mdgriffith$elm_ui$Internal$Model$AsRow;
 var $mdgriffith$elm_ui$Element$row = F2(
@@ -11436,19 +11462,14 @@ var $author$project$View$view0 = function (model) {
 				$mdgriffith$elm_ui$Element$column,
 				_List_fromArray(
 					[
-						$mdgriffith$elm_ui$Element$padding(10),
+						$mdgriffith$elm_ui$Element$padding(20),
 						$mdgriffith$elm_ui$Element$width($mdgriffith$elm_ui$Element$fill)
 					]),
 				_List_fromArray(
 					[
 						A2(
 						$mdgriffith$elm_ui$Element$image,
-						_List_fromArray(
-							[
-								$mdgriffith$elm_ui$Element$centerX,
-								$mdgriffith$elm_ui$Element$height(
-								$mdgriffith$elm_ui$Element$px(500))
-							]),
+						$author$project$View$imgAttr,
 						{description: 'Zenia', src: 'flower1.png'})
 					])),
 				A2(
@@ -11502,19 +11523,14 @@ var $author$project$View$view1 = function (model) {
 				$mdgriffith$elm_ui$Element$column,
 				_List_fromArray(
 					[
-						$mdgriffith$elm_ui$Element$padding(10),
+						$mdgriffith$elm_ui$Element$padding(20),
 						$mdgriffith$elm_ui$Element$width($mdgriffith$elm_ui$Element$fill)
 					]),
 				_List_fromArray(
 					[
 						A2(
 						$mdgriffith$elm_ui$Element$image,
-						_List_fromArray(
-							[
-								$mdgriffith$elm_ui$Element$centerX,
-								$mdgriffith$elm_ui$Element$height(
-								$mdgriffith$elm_ui$Element$px(500))
-							]),
+						$author$project$View$imgAttr,
 						{description: 'Rose', src: 'flower2.png'})
 					])),
 				A2(
@@ -11537,6 +11553,13 @@ var $author$project$View$view1 = function (model) {
 						$mdgriffith$elm_ui$Element$Input$button,
 						$author$project$View$attr,
 						{
+							label: $mdgriffith$elm_ui$Element$text('First'),
+							onPress: $elm$core$Maybe$Just($author$project$Msg$First)
+						}),
+						A2(
+						$mdgriffith$elm_ui$Element$Input$button,
+						$author$project$View$attr,
+						{
 							label: $mdgriffith$elm_ui$Element$text('Last'),
 							onPress: $elm$core$Maybe$Just($author$project$Msg$Last)
 						})
@@ -11554,19 +11577,14 @@ var $author$project$View$view2 = function (model) {
 				$mdgriffith$elm_ui$Element$column,
 				_List_fromArray(
 					[
-						$mdgriffith$elm_ui$Element$padding(10),
+						$mdgriffith$elm_ui$Element$padding(20),
 						$mdgriffith$elm_ui$Element$width($mdgriffith$elm_ui$Element$fill)
 					]),
 				_List_fromArray(
 					[
 						A2(
 						$mdgriffith$elm_ui$Element$image,
-						_List_fromArray(
-							[
-								$mdgriffith$elm_ui$Element$centerX,
-								$mdgriffith$elm_ui$Element$height(
-								$mdgriffith$elm_ui$Element$px(500))
-							]),
+						$author$project$View$imgAttr,
 						{description: 'Lotus', src: 'flower3.png'})
 					])),
 				A2(

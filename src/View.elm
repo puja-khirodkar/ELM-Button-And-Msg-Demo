@@ -18,11 +18,21 @@ attr : List (Element.Attribute Msg.Msg)
 attr =
     [ Element.height <| px 50
     , Element.width <| px 100
-    , Background.color <| rgb 2.0 2.0 0.0
+    , Background.color <| rgb 211 211 211
     , Element.Border.rounded 5
-    , Element.Border.color <| rgb 1.0 1.0 1.0
+    , Element.Border.width 1
+    , Element.Border.color <| rgb 0 0 0
     , padding 10
     , spacing 50
+    ]
+
+
+imgAttr : List (Element.Attribute Msg.Msg)
+imgAttr =
+    [ centerX
+    , Element.height <| px 500
+    , Element.Border.color <| rgb 0 0 0
+    , Element.Border.width 2
     ]
 
 
@@ -43,8 +53,11 @@ view model =
 view0 : Model.Model -> Element Msg.Msg
 view0 model =
     column [ centerX ]
-        [ column [ padding 10, width fill ]
-            [ Element.image [ centerX, Element.height <| px 500 ] { src = "flower1.png", description = "Zenia" } ]
+        [ column [ padding 20, width fill ]
+            [ Element.image
+                imgAttr
+                { src = "flower1.png", description = "Zenia" }
+            ]
         , row [ centerX, spacing 20 ]
             [ Input.button
                 attr
@@ -65,12 +78,15 @@ view0 model =
 view1 : Model.Model -> Element Msg.Msg
 view1 model =
     column [ centerX ]
-        [ column [ padding 10, width fill ]
-            [ Element.image [ centerX, Element.height <| px 500 ] { src = "flower2.png", description = "Rose" } ]
+        [ column [ padding 20, width fill ]
+            [ Element.image imgAttr { src = "flower2.png", description = "Rose" } ]
         , row [ centerX, spacing 20 ]
             [ Input.button
                 attr
                 { onPress = Just Msg.Next, label = text "Next" }
+            , Input.button
+                attr
+                { onPress = Just Msg.First, label = text "First" }
             , Input.button
                 attr
                 { onPress = Just Msg.Last, label = text "Last" }
@@ -81,8 +97,8 @@ view1 model =
 view2 : Model.Model -> Element Msg.Msg
 view2 model =
     column [ centerX ]
-        [ column [ padding 10, width fill ]
-            [ Element.image [ centerX, Element.height <| px 500 ] { src = "flower3.png", description = "Lotus" } ]
+        [ column [ padding 20, width fill ]
+            [ Element.image imgAttr { src = "flower3.png", description = "Lotus" } ]
         , row [ centerX, spacing 20 ]
             [ Input.button
                 attr
